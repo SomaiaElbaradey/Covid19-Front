@@ -1,0 +1,22 @@
+.intro-desc h3{
+    font: 69px bolder;
+}
+
+.intro-desc p{
+    width: 400px;
+}
+
+.read-btn{
+    background-color:white;
+    color: #00cdcd;
+    align-self: center;
+    border-radius: 30px;
+    height: 45px;
+    width: 166px;
+    font-size: 19px;
+}
+
+.read-btn:hover{
+    background-color:#f2ce5f;
+    color: white;
+}
