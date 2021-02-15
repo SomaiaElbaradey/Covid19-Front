@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  logo:string = '/assets/img/logo.png';
+  image:string = '/assets/img/glob.png';
 
-  constructor() { }
+  constructor( ) { }
+  ngOnInit( ): void {  }
 
-  ngOnInit(): void {
+  login(){
+
   }
-
+  register(){
+    
+  }
 }

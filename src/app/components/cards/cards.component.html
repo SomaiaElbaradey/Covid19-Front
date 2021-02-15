@@ -1,0 +1,55 @@
+<div class="container cards">
+    <div class="row d-flex justify-content-center">
+        <div *ngFor="let country of countries | paginate: {
+            id: 'listing_pagination', itemsPerPage: 12, currentPage: page, totalItems: totalCountries}"
+            class=" card col-md-3" style="width: 18rem;">
+            <div *ngIf="country.population" class="card-body">
+                <div class="heart-div text-right align-self-end">
+                    <!-- <img class="heart" width="35" src={{whiteheart}}> -->
+                </div>
+                <div class="row d-flex flex-row">
+                    <div class="col-3 align-self-start">
+                        <i
+                            class="card-icon-div flag-icon flag-icon-{{country.country_iso2.toLowerCase()}} flag-icon-squared"></i>
+                    </div>
+                    <div class="col-8 align-self-center ">
+                        <h5 class="card-title">{{country.country}}</h5>
+                    </div>
+                </div>
+                <hr>
+                <div class="card-text text-left">
+                    <p class="pop"><span class="card-data"> Population: </span> {{country.population}} </p>
+                    <p class="conf">  <span class="card-data"> Confirmed: </span>{{country.confirmed}} </p>
+                    <p class="death"><span class="card-data"> Deaths: </span>{{country.deaths}} </p>
+                    <p class="re"><span class="card-data"> Recovered: </span>{{country.recovered}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <pagination-controls id="listing_pagination" class="text-center paginationNo" maxSize="6" directionLinks="true"
+        (pageChange)="page = $event"></pagination-controls>
+
+
+    <!-- modal to update existing task -->
+    <ng-template #taskModal let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">update the task</h4>
+        </div>
+        <div class="modal-body">
+            <form #Form class="step-group">
+                <input type="text" name="title" class="form-control field-title" placeholder="Title">
+                <textarea name="body" class="form-control field-body" placeholder="Task Details"></textarea>
+                <input type="text" placeholder="Tags" class="form-control" name="tags">
+            </form>
+            <span style="color: rgb(4, 61, 42); margin-left: 10px;" *ngIf="err == false">
+                <!-- <img src="https://img.icons8.com/fluent/30/000000/checkmark.png" /> -->
+                Task was updated successfully
+            </span>
+            <span *ngIf="err" class="invalid">{{err}}</span>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark">Save</button>
+            <button type="button" class="btn btn-secondary" (click)="modal.close('')">Close</button>
+        </div>
+    </ng-template>
+</div>

@@ -1,0 +1,86 @@
+.cards>div{
+    margin-top: 100px;
+    gap:5%;
+    margin-bottom: 39px;
+}
+
+.cards .card{
+    background-color: #00cdcd;
+    color: white;
+    text-align: center;
+}
+
+.card-icon-div{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #00cdcd;
+}
+
+.card .card-title{
+    font-weight: 600;
+    font-size: 23px;
+    padding: 5px;
+    margin: 0;
+}
+
+.card .card-text{
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.cards .card:hover{
+    border-bottom: 5px #f2ce5f solid ;
+}
+
+.cards .card:hover .card-icon-div {
+    color: #f2ce5f; 
+}
+
+.paginationNo{
+    margin-bottom: 10px;
+    color: #303952;
+    font-weight: 800;
+}
+
+.paginationNo /deep/ .ngx-pagination .current {
+    background: #00cdcd;
+}
+
+.card-text .card-data{
+    display: inline-block;
+    width: 90px;
+}
+
+.card{
+    margin-bottom: 1em;
+}
+
+.death{
+    color: #860915;
+}
+
+.re{
+    color: #09033b;
+}
+
+.pop{
+    color: black;
+}
+
+.conf{
+    color: #084b22;
+}
+
+.heart-div{
+    display: inline-block;
+    background-image: url('src/assets/icons/wHeart.png');
+    background-size: cover;
+    margin-left: 90%;
+    width: 35px;
+    height: 35px;
+}
+.heart-div:hover{
+    background-image: url('src/assets/icons/rHeart.png');
+    cursor: pointer;
+}

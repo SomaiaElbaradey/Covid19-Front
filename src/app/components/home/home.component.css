@@ -1,9 +1,33 @@
+/* header */
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+.header{
+    padding-left: 2em;
+    padding-right: 3em;
+    background: linear-gradient(to bottom right, #00cdcd 65%,#fff 65.1%, #fff 100%);
+}
+
+.navbar, .header{
+    background-color: #00cdcd!important;
+    color: white!important;
+    opacity: 1!important;
+}
+
+/**/
+.nav-item a:hover{
+    cursor: pointer;
+}
+
 .intro-desc h3{
-    font: 69px bolder;
+    font: 59px bolder;
+    font-weight: 700;
 }
 
 .intro-desc p{
-    width: 400px;
+    width: 80%;
 }
 
 .read-btn{

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Lato;
+    src: url(assets/fonts/Lato-Regular.ttf);
+} 
+
+*{
+    font-family: Lato, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    padding-top: 60px;
+}
