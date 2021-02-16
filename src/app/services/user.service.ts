@@ -26,7 +26,7 @@ export class UserService {
       ).pipe(
         map((response) => {
           if (response) {
-            localStorage.setItem("Token", response);
+            localStorage.setItem("Covid19Token", response);
             this.router.navigateByUrl('/home');
           }
         })
@@ -50,6 +50,11 @@ export class UserService {
   }
 
   public isLogged(){
-    return !!(localStorage.getItem("Token"));
+    return !!(localStorage.getItem("Covid19Token"));
+  }
+
+  public logout() {
+    localStorage.removeItem("Covid19Token");
+    this.router.navigateByUrl('/');
   }
 }

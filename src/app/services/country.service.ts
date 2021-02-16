@@ -22,6 +22,13 @@ export class CountryService {
       .get(`${this.baseURL}countries`)
   }
 
+  //remove from fav countries
+  public deleteFav(id): Observable<any> {
+    return this._HttpClient
+      .delete(`${this.baseURL}${id}`
+      )
+  }
+
   //add fav countries
   public addFav(id): Observable<any> {
     return this._HttpClient
@@ -35,5 +42,5 @@ export class CountryService {
     return this._HttpClient
       .get(`${this.baseURL}getFav`)
   }
-  
+
 }

@@ -1,0 +1,11 @@
+.close-div{
+    display: inline-block;
+    background-image: url('src/assets/icons/x.png');
+    background-size: cover;
+    margin-left: 90%;
+    width: 35px;
+    height: 28px;
+}
+.close-div:hover{
+    cursor: pointer;
+}

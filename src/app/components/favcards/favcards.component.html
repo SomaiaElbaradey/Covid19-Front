@@ -4,6 +4,8 @@
             id: 'listing_pagination', itemsPerPage: 12, currentPage: page, totalItems: totalCountries}"
             class=" card col-md-3" style="width: 18rem;">
             <div *ngIf="country.population" class="card-body">
+                <div (click)="deleteFav(country._id)" class="close-div text-right align-self-end">
+                </div>
                 <div class="row d-flex flex-row">
                     <div class="col-3 align-self-start">
                         <i

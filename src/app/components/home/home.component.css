@@ -17,6 +17,9 @@ body{
 }
 
 /**/
+.nav-item a{
+    font-size: 18px;
+}
 .nav-item a:hover{
     cursor: pointer;
 }
@@ -28,6 +31,7 @@ body{
 
 .intro-desc p{
     width: 80%;
+    font-size: 19px;
 }
 
 .read-btn{
@@ -37,7 +41,7 @@ body{
     border-radius: 30px;
     height: 45px;
     width: 166px;
-    font-size: 19px;
+    font-size: 21px;
 }
 
 .read-btn:hover{
