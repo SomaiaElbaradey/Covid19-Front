@@ -38,7 +38,7 @@ import { AuthGuard } from './services/auth.guard';
     ErrorComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     RouterModule,
     CommonModule,
