@@ -1,0 +1,77 @@
+<div class="header">
+    <nav class="navbar navbar-expand navbar-dark fixed-top">
+        <div class="container mt-3">
+            <a class="navbar-brand">
+                <img width="150" src={{logo}} class="img-fluid" alt="">
+            </a>
+            <div id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="login(loginModal)">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="signup(registerModal)">Signup</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- modal to login -->
+    <ng-template #loginModal let-modal>
+        <div class="modal-header text-center">
+            <h4 class="modal-title align-self-center"> Login</h4>
+
+            <img width="70" src="{{logo}}">
+        </div>
+        <div class="modal-body">
+            <form #Form class="step-group">
+                <img class="align-self-center person"
+                    src="https://img.icons8.com/pastel-glyph/35/000000/person-male--v3.png" />
+                <input type="text" name="username" class="form-control" placeholder="Username">
+                <br>
+                <img class="lock" src="https://img.icons8.com/metro/30/000000/lock-2.png" />
+                <input type="password" name="password" class="form-control" placeholder="Password">
+            </form>
+            <span style="color: rgb(4, 61, 42); margin-left: 10px;" *ngIf="logged">
+                <img src="https://img.icons8.com/fluent/30/000000/checkmark.png" />
+                you have logged in successfully</span>
+            <span *ngIf="err" class="invalid">{{err}}</span>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary save" (click)="signin(Form)">Save</button>
+            <button type="button" class="btn btn-secondary" (click)="modal.close('')">Close</button>
+        </div>
+    </ng-template>
+
+    <!-- modal to sign up -->
+    <ng-template #registerModal let-modal>
+        <div class="modal-header text-center">
+            <h4 class="modal-title align-self-center"> SignUp</h4>
+            <img width="70" src="{{logo}}">
+        </div>
+        <div class="modal-body">
+            <form #registerForm class="step-group">
+                <img class="align-self-center person"
+                    src="https://img.icons8.com/pastel-glyph/35/000000/person-male--v3.png" />
+                <input type="text" name="username" class="form-control" placeholder="Username">
+                <br>
+                <img class="lock" src="https://img.icons8.com/metro/30/000000/lock-2.png" />
+                <input type="password" name="password" class="form-control" placeholder="Password">
+            </form>
+            <span style="color: rgb(4, 61, 42); margin-left: 10px;" *ngIf="logged">
+                <img src="https://img.icons8.com/fluent/30/000000/checkmark.png" />
+                you have logged in successfully</span>
+            <span *ngIf="err" class="invalid">{{err}}</span>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary save" (click)="register(registerForm)">Save</button>
+            <button type="button" class="btn btn-secondary" (click)="modal.close('')">Close</button>
+        </div>
+    </ng-template>
+
+</div>

@@ -16,10 +16,24 @@ export class CountryService {
 
   private baseURL: string = `${environment.api}/api/country/`
 
-   //get all countries
-   public allCountries(): Observable<any> {
+  //get all countries
+  public allCountries(): Observable<any> {
     return this._HttpClient
       .get(`${this.baseURL}countries`)
+  }
+
+  //add fav countries
+  public addFav(id): Observable<any> {
+    return this._HttpClient
+      .patch(`${this.baseURL}${id}`,
+        { responseType: "text" }
+      )
+  }
+
+  //get all countries
+  public getFavCountries(): Observable<any> {
+    return this._HttpClient
+      .get(`${this.baseURL}getFav`)
   }
   
 }

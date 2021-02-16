@@ -7,17 +7,35 @@ import { CardsComponent } from './components/cards/cards.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { TokenInterceptorService } from './token-interceptor.service';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from './app-routing.module';  
-import {NgxPaginationModule} from 'ngx-pagination';
+import { AppRoutingModule } from './app-routing.module';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserhomeComponent } from './components/userhome/userhome.component';
+import { FavnavbarComponent } from './components/favnavbar/favnavbar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FavcardsComponent } from './components/favcards/favcards.component';
+import { FavhomeComponent } from './components/favhome/favhome.component';
+import { ErrorComponent } from './components/error/error.component';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CardsComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarComponent,
+    UserhomeComponent,
+    FavnavbarComponent,
+    HeaderComponent,
+    FavcardsComponent,
+    FavhomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +43,17 @@ import {NgxPaginationModule} from 'ngx-pagination';
     RouterModule,
     CommonModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

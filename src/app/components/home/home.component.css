@@ -44,3 +44,38 @@ body{
     background-color:#f2ce5f;
     color: white;
 }
+
+/* modal design */
+
+.modal-header .modal-title{
+    font-size: 25px;
+    color: #303952;
+    font-weight: 600;
+}
+
+.modal-body input{
+    margin-bottom: 23px;
+    width: 80%;
+    display: inline-block;
+}
+
+.person{
+    margin-right: 15px;
+}
+
+.lock{
+    margin-right: 20px;
+}
+.modal-footer .save{
+    border: none;
+    color: white;
+    background-color: #00cdcd;
+}
+
+.modal-footer .save:hover{
+    background-color: #f2ce5f;
+}
+
+.invalid{
+    color: rgb(151, 30, 30);
+}

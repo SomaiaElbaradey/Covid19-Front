@@ -24,10 +24,16 @@ export class CardsComponent implements OnInit {
   ngOnInit(): void {
     this._CountryService.allCountries().subscribe(
       res => {
-        console.log(res);
         this.countries = res;
         this.totalCountries = this.countries.length;
       },
+      err => console.log(err)
+    )
+  }
+
+  addFav(id){
+    this._CountryService.addFav(id).subscribe(
+      res => console.log(res),
       err => console.log(err)
     )
   }
