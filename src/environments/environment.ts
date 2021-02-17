@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:2939'
+  api: 'https://coronavirus-worldwide.herokuapp.com'
 };
 
 /*
