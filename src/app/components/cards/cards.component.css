@@ -80,7 +80,15 @@
     width: 35px;
     height: 35px;
 }
+
 .heart-div:hover{
     background-image: url('src/assets/icons/rHeart.png');
     cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+    .card .card-text{
+        font-weight: 600;
+        font-size: 11px;
+    }
+  }

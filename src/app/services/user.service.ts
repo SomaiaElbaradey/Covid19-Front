@@ -43,6 +43,7 @@ export class UserService {
       ).pipe(
         map((response) => {
           if (response) {
+            localStorage.setItem("Covid19Token", response);
             this.router.navigateByUrl('/home');
           }
         })
