@@ -41,4 +41,8 @@
     .main-features .center-right{
         padding-left: 0px;
     }
+
+    .features-header{
+        padding-bottom: 50px;
+    }
 }

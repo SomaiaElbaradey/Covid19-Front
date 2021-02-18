@@ -86,7 +86,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     .card .card-text{
         font-weight: 600;
         font-size: 11px;
