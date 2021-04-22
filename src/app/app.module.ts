@@ -23,6 +23,9 @@ import { FavhomeComponent } from './components/favhome/favhome.component';
 import { ErrorComponent } from './components/error/error.component';
 import { AuthGuard } from './services/auth.guard';
 
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +42,8 @@ import { AuthGuard } from './services/auth.guard';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
     HttpClientModule,
     RouterModule,
     CommonModule,

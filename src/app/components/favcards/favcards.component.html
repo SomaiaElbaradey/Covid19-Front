@@ -1,5 +1,6 @@
 <div class="container cards">
-    <div class="row d-flex justify-content-center">
+    <div *ngIf="countries.length == 0" class="text-center title"> You have no favourite countries yet..</div>
+    <div *ngIf="countries.length != 0" class="row d-flex justify-content-center">
         <div *ngFor="let country of countries | paginate: {
             id: 'listing_pagination', itemsPerPage: 12, currentPage: page, totalItems: totalCountries}"
             class=" card col-md-3" style="width: 18rem;">
@@ -26,7 +27,7 @@
             </div>
         </div>
     </div>
-    <pagination-controls id="listing_pagination" class="text-center paginationNo" maxSize="6" directionLinks="true"
+    <pagination-controls *ngIf="countries.length != 0" id="listing_pagination" class="text-center paginationNo" maxSize="6" directionLinks="true"
         (pageChange)="page = $event"></pagination-controls>
 
 </div>

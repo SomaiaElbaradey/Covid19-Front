@@ -8,6 +8,7 @@
     background-color: #00cdcd;
     color: white;
     text-align: center;
+    border-bottom: 5px #00cdcd solid ;
 }
 
 .card-icon-div{
@@ -22,6 +23,13 @@
     font-size: 23px;
     padding: 5px;
     margin: 0;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 23px;
+    padding: 5px;
+    height: 300px;
 }
 
 .card .card-text{

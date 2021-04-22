@@ -25,7 +25,8 @@ export class CountryService {
   //remove from fav countries
   public deleteFav(id): Observable<any> {
     return this._HttpClient
-      .delete(`${this.baseURL}${id}`
+      .delete(`${this.baseURL}${id}`,
+      { responseType: "text" }
       )
   }
 

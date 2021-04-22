@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CountryService } from 'src/app/services/country.service';
+import { NotifyService } from 'src/app/services/notify.service';
 
 @Component({
   selector: 'app-cards',
@@ -18,7 +19,8 @@ export class CardsComponent implements OnInit {
   page:Number =1;
 
   constructor(
-    private _CountryService: CountryService
+    private _CountryService: CountryService,
+    private _Notify: NotifyService
   ) { }
 
   ngOnInit(): void {
@@ -33,8 +35,19 @@ export class CardsComponent implements OnInit {
 
   addFav(id){
     this._CountryService.addFav(id).subscribe(
-      res => console.log(res),
-      err => console.log(err)
+      res => {
+        this._Notify.showSuccess(
+          'Country has been added to Favourites',
+          'Fav Country'
+        );
+      },
+      err => {
+        if(err.status == 200)
+        this._Notify.showSuccess(
+          'Country has been added to Favourites',
+          'Fav Country'
+        );
+      }
     )
   }
 }
